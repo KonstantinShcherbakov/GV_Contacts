@@ -3,8 +3,8 @@
 }
 
 .contacts-main {
-    max-width: 1920px;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contacts-link {
@@ -17,22 +17,55 @@
 
 .contacts-main-picture {
     height: 560px;
+    width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    position: relative;
 
-    padding-bottom: 64px;
+    @include __860 {
+        height: 254px;
+    }
 
-    background: linear-gradient(180deg, rgba(138, 138, 138, 0) 0%, rgba(54, 54, 54, 0.37) 56.63%, rgba(54, 54, 54, 0.83) 81.98%), url("../images/ContactsMainPicture.jpg");
-    background-position: center;
+    &__img-wrp {
+        width: 100%;
+        height: 100%;
+
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            @include __860 {
+                object-position: left;
+            }
+        }
+    }
+
+    &__img-gradient {
+        width: 100%;
+        height: 100%;
+
+        background: linear-gradient(180deg, rgba(138, 138, 138, 0) 0%, rgba(54, 54, 54, 0.37) 56.63%, rgba(54, 54, 54, 0.83) 81.98%);
+
+        position: absolute;
+        top: 0;
+    }
 
     &__header-wrp {
         max-width: 1472px;
         width: 100%;
 
+        position: absolute;
+        bottom: 64px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
         padding-left: 16px;
         padding-right: 16px;
+
+        @include __860 {
+            bottom: 32px;
+        }
     }
 
     &__header {
@@ -40,6 +73,10 @@
         font-size: 36px;
         font-weight: 700;
         color: $white;
+
+        @include __860 {
+            font-size: 24px;
+        }
     }
 }
 
@@ -66,6 +103,10 @@
 
     box-sizing: border-box;
 
+    @include __860 {
+        display: none;
+    }
+
     &__line {
         background-color: $white;
         width: 8px;
@@ -82,7 +123,7 @@
         padding-bottom: 136px;
 
         position: sticky;
-        top: 20vh;
+        top: 0;
 
         display: flex;
         flex-direction: column;
@@ -144,6 +185,12 @@
     flex-direction: column;
     gap: 40px;
 
+    @include __860 {
+        padding-top: 32px;
+
+        gap: 16px;
+    }
+
     &__section {
         background-color: $white;
 
@@ -152,6 +199,18 @@
         border-radius: 8px;
 
         box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+
+        @include __860 {
+            padding: 16px 0;
+    
+            gap: 16px;
+        }
+    }
+
+    &__section-content-wrp {
+        @include __860 {
+            padding: 0 16px;
+        }
     }
 
     &__section-header {
@@ -163,6 +222,13 @@
         margin-bottom: 16px;
 
         text-transform: uppercase;
+
+        @include __860 {
+            font-size: 16px;
+            font-weight: 700;
+
+            text-transform: none;
+        }
     }
 
     &__section-line {
@@ -192,6 +258,18 @@
         color: $text_black;
 
         margin-bottom: 16px;
+    }
+
+    &__section-text-centered-on-mobile {
+        @include __860 {
+            text-align: center;
+        }
+    }
+
+    &__section-text-smaller-on-mobile {
+        @include __860 {
+            font-size: 12px;
+        }
     }
 
     &__section-btn {
@@ -260,6 +338,13 @@
         }
     }
 
+    &__call-btn {
+        @include __860 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
     &__section-btn-text {
         font-family: $main_font;
         font-weight: 400;
@@ -269,6 +354,10 @@
     &__section-socials {
         display: flex;
         gap: 16px;
+
+        @include __860 {
+            justify-content: center;
+        }
     }
 
     &__cards {
@@ -280,6 +369,13 @@
         padding-top: 16px;
 
         margin-bottom: 32px;
+
+        @include __860 {
+            flex-direction: column;
+            align-items: center;
+
+            gap: 16px;
+        }
     }
 
     &__cards-small {
@@ -291,6 +387,13 @@
         padding-top: 16px;
 
         margin-bottom: 32px;
+
+        @include __860 {
+            flex-direction: column;
+            align-items: center;
+
+            gap: 16px;
+        }
     }
 
     &__card {
@@ -304,6 +407,10 @@
         align-items: center;
 
         margin-bottom: 20px;
+
+        @include __860 {
+            gap: 18px;
+        }
     }
 
     &__card-photo-wrp {
@@ -315,6 +422,11 @@
         border-radius: 50%;
 
         overflow: hidden;
+
+        @include __860 {
+            width: 64px;
+            height: 64px;
+        }
     }
 
     &__card-info-wrp {
@@ -328,6 +440,11 @@
         font-size: 22px;
         font-weight: 700;
         color: $green;
+
+        @include __860 {
+            font-size: 16px;
+            font-weight: 400;
+        }
     }
 
     &__card-job {
@@ -336,6 +453,11 @@
         font-weight: 400;
         color: $text_black;
         font-style: italic;
+
+        @include __860 {
+            font-size: 12px;
+            font-style: normal;
+        }
     }
 
     &__card-number {
@@ -346,6 +468,12 @@
         padding-left: 32px;
 
         margin-bottom: 15px;
+
+        @include __860 {
+            gap: 24px;
+
+            padding-left: 20px;
+        }
     }
 
     &__card-number-types {
@@ -370,6 +498,12 @@
         font-size: 14px;
         font-weight: 400;
         color: $text_black;
+
+        @include __860 {
+            gap: 24px;
+
+            padding-left: 20px;
+        }
     }
 
     &__map-wrp {
@@ -382,6 +516,10 @@
 
         & iframe {
             width: 100%;
+
+            @include __860 {
+                height: 152px;
+            }
         }
     }
 
@@ -392,6 +530,13 @@
         color: $text_black;
 
         margin-bottom: 16px;
+
+        @include __860 {
+            font-size: 16px;
+            font-weight: 500;
+
+            text-transform: uppercase;
+        }
     }
 }
 
