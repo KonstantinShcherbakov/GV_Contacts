@@ -449,6 +449,12 @@ label {
   max-width: 350px;
   width: 100%;
 }
+@media (max-width: 860px) {
+  .contacts-sections__card {
+    border-bottom: 1px solid #F3F3F3;
+    padding-bottom: 10px;
+  }
+}
 .contacts-sections__card-main-wrp {
   display: flex;
   gap: 26px;
